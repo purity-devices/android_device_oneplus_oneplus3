@@ -18,8 +18,8 @@
     "revision": "android-7.1"
   },
   {
-    "remote": "omnirom",
-    "repository": "android_packages_apps_SnapdragonCamera",
+    "remote": "github",
+    "repository": "AndroidRul3z/android_packages_apps_SnapdragonCamera",
     "target_path": "packages/apps/SnapdragonCamera",
     "revision": "android-7.1"
   },
@@ -83,9 +83,15 @@
     "revision": "android-7.1"
   },
   {
-    "remote": "omnirom",
-    "repository": "android_kernel_oneplus_msm8996",
+    "remote": "github",
+    "repository": "purity-devices/android_kernel_oneplus_msm8996",
     "target_path": "kernel/oneplus/msm8996",
+    "revision": "android-7.1"
+  },
+  {
+    "remote": "github",
+    "repository": "donkeycoyote/proprietary_vendor_oneplus",
+    "target_path": "vendor/oneplus",
     "revision": "android-7.1"
   }
 ]
