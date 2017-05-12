@@ -66,6 +66,7 @@
     "revision": "android-7.1"
   },
   {
+    "remote": "omnirom",
     "repository": "android_external_ant-wireless_antradio-library",
     "target_path": "external/ant-wireless/antradio-library",
     "revision": "android-7.1"
@@ -87,6 +88,12 @@
     "repository": "purity-devices/android_kernel_oneplus_msm8996",
     "target_path": "kernel/oneplus/msm8996",
     "revision": "android-7.1"
+  },
+  {
+    "remote": "github",
+    "repository": "DonkeyCoyote/proprietary_vendor_qcom_binaries",
+    "target_path": "vendor/qcom/binaries",
+    "revision": "cm-14.1"
   },
   {
     "remote": "github",
