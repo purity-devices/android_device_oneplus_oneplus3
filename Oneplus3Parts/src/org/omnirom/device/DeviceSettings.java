@@ -25,7 +25,7 @@ import android.preference.Preference;
 import android.preference.PreferenceActivity;
 import android.preference.PreferenceCategory;
 import android.preference.PreferenceScreen;
-import android.preference.TwoStatePreference;
+import android.preference.SwitchPreference;
 import android.provider.Settings;
 import android.text.TextUtils;
 import android.view.MenuItem;
@@ -46,17 +46,17 @@ public class DeviceSettings extends PreferenceActivity implements
     public static final String KEY_HBM_SWITCH = "hbm";
     public static final String KEY_PROXI_SWITCH = "proxi";
 
-    private TwoStatePreference mTorchSwitch;
-    private TwoStatePreference mCameraSwitch;
+    private SwitchPreference mTorchSwitch;
+    private SwitchPreference mCameraSwitch;
     private VibratorStrengthPreference mVibratorStrength;
-    private TwoStatePreference mMusicSwitch;
+    private SwitchPreference mMusicSwitch;
     private ListPreference mSliderModeTop;
     private ListPreference mSliderModeCenter;
     private ListPreference mSliderModeBottom;
-    private TwoStatePreference mSwapBackRecents;
-    private TwoStatePreference mSRGBModeSwitch;
-    private TwoStatePreference mHBMModeSwitch;
-    private TwoStatePreference mProxiSwitch;
+    private SwitchPreference mSwapBackRecents;
+    private SwitchPreference mSRGBModeSwitch;
+    private SwitchPreference mHBMModeSwitch;
+    private SwitchPreference mProxiSwitch;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -65,12 +65,12 @@ public class DeviceSettings extends PreferenceActivity implements
 
         addPreferencesFromResource(R.xml.main);
 
-        mTorchSwitch = (TwoStatePreference) findPreference(KEY_TORCH_SWITCH);
+        mTorchSwitch = (SwitchPreference) findPreference(KEY_TORCH_SWITCH);
         mTorchSwitch.setEnabled(TorchGestureSwitch.isSupported());
         mTorchSwitch.setChecked(TorchGestureSwitch.isCurrentlyEnabled(this));
         mTorchSwitch.setOnPreferenceChangeListener(new TorchGestureSwitch());
 
-        mCameraSwitch = (TwoStatePreference) findPreference(KEY_CAMERA_SWITCH);
+        mCameraSwitch = (SwitchPreference) findPreference(KEY_CAMERA_SWITCH);
         mCameraSwitch.setEnabled(CameraGestureSwitch.isSupported());
         mCameraSwitch.setChecked(CameraGestureSwitch.isCurrentlyEnabled(this));
         mCameraSwitch.setOnPreferenceChangeListener(new CameraGestureSwitch());
@@ -80,7 +80,7 @@ public class DeviceSettings extends PreferenceActivity implements
             mVibratorStrength.setEnabled(VibratorStrengthPreference.isSupported());
         }
 
-        mMusicSwitch = (TwoStatePreference) findPreference(KEY_MUSIC_SWITCH);
+        mMusicSwitch = (SwitchPreference) findPreference(KEY_MUSIC_SWITCH);
         mMusicSwitch.setEnabled(MusicGestureSwitch.isSupported());
         mMusicSwitch.setChecked(MusicGestureSwitch.isCurrentlyEnabled(this));
         mMusicSwitch.setOnPreferenceChangeListener(new MusicGestureSwitch());
@@ -106,21 +106,21 @@ public class DeviceSettings extends PreferenceActivity implements
         mSliderModeBottom.setValueIndex(valueIndex);
         mSliderModeBottom.setSummary(mSliderModeBottom.getEntries()[valueIndex]);
 
-        mSwapBackRecents = (TwoStatePreference) findPreference(KEY_SWAP_BACK_RECENTS);
+        mSwapBackRecents = (SwitchPreference) findPreference(KEY_SWAP_BACK_RECENTS);
         mSwapBackRecents.setChecked(Settings.System.getInt(getContentResolver(),
                     Settings.System.BUTTON_SWAP_BACK_RECENTS, 0) != 0);
 
-        mSRGBModeSwitch = (TwoStatePreference) findPreference(KEY_SRGB_SWITCH);
+        mSRGBModeSwitch = (SwitchPreference) findPreference(KEY_SRGB_SWITCH);
         mSRGBModeSwitch.setEnabled(SRGBModeSwitch.isSupported());
         mSRGBModeSwitch.setChecked(SRGBModeSwitch.isCurrentlyEnabled(this));
         mSRGBModeSwitch.setOnPreferenceChangeListener(new SRGBModeSwitch());
 
-        mHBMModeSwitch = (TwoStatePreference) findPreference(KEY_HBM_SWITCH);
+        mHBMModeSwitch = (SwitchPreference) findPreference(KEY_HBM_SWITCH);
         mHBMModeSwitch.setEnabled(HBMModeSwitch.isSupported());
         mHBMModeSwitch.setChecked(HBMModeSwitch.isCurrentlyEnabled(this));
         mHBMModeSwitch.setOnPreferenceChangeListener(new HBMModeSwitch());
 
-        mProxiSwitch = (TwoStatePreference) findPreference(KEY_PROXI_SWITCH);
+        mProxiSwitch = (SwitchPreference) findPreference(KEY_PROXI_SWITCH);
         mProxiSwitch.setChecked(Settings.System.getInt(getContentResolver(),
                 Settings.System.DEVICE_PROXI_CHECK_ENABLED, 1) != 0);
     }
