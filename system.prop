@@ -84,7 +84,7 @@ ro.am.reschedule_service=true
 ro.vendor.extension_library=libqti-perfd-client.so
 ro.min_freq_0=307200
 ro.min_freq_4=307200
-ro.sys.fw.bg_apps_limit=60
+ro.sys.fw.bg_apps_limit=45
 
 # QCOM
 ro.frp.pst=/dev/block/platform/soc/624000.ufshc/by-name/config
@@ -136,4 +136,37 @@ wifi.interface=wlan0
 
 # misc
 ro.build.selinux=1
+
+
+#reschedule killed services during app launch
+ro.am.reschedule_service=true
+
+#set cutoff voltage to 3250MV
+ro.cutoff_voltage_mv=3250
+
+# Dalvik properties
+dalvik.vm.heapstartsize=16m
+dalvik.vm.heapgrowthlimit=256m
+dalvik.vm.heapsize=512m
+dalvik.vm.heaptargetutilization=0.75
+dalvik.vm.heapminfree=4m
+dalvik.vm.heapmaxfree=8m
+
+dalvik.vm.dex2oat-swap=false
+
+# Dexopt everything inside the boot image
+dalvik.vm.image-dex2oat-filter=everything
+
+#hwui properties
+ro.hwui.texture_cache_size=96
+ro.hwui.layer_cache_size=64
+ro.hwui.r_buffer_cache_size=12
+ro.hwui.path_cache_size=39
+ro.hwui.gradient_cache_size=1
+ro.hwui.drop_shadow_cache_size=7
+ro.hwui.texture_cache_flushrate=0.4
+ro.hwui.text_small_cache_width=2048
+ro.hwui.text_small_cache_height=2048
+ro.hwui.text_large_cache_width=3072
+ro.hwui.text_large_cache_height=2048
 
