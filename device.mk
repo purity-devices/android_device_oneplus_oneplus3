@@ -236,6 +236,11 @@ PRODUCT_PACKAGES += \
     wpa_supplicant \
     wpa_supplicant.conf
 
+# Power profile
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/power/power_profile.xml:system/etc/power_profile.xml \
+    $(LOCAL_PATH)/power/power_profile_3t.xml:system/etc/power_profile_3t.xml
+
 # Camera
 PRODUCT_PACKAGES += \
     SnapdragonCamera \

@@ -94,6 +94,7 @@ void load_op3(const char *model) {
     property_set("ro.product.device", "OnePlus3");
     property_set("ro.build.description", "OnePlus3-user 7.1.1 NMF26F 25 dev-keys");
     property_set("ro.build.fingerprint", "OnePlus/OnePlus3/OnePlus3:7.1.1/NMF26F/02070826:user/release-keys");
+    property_set("ro.power_profile", "/system/etc/power_profile.xml");
 }
 
 void load_op3t(const char *model) {
@@ -102,6 +103,7 @@ void load_op3t(const char *model) {
     property_set("ro.product.device", "OnePlus3T");
     property_set("ro.build.description", "OnePlus3-user 7.1.1 NMF26F 7 dev-keys");
     property_set("ro.build.fingerprint", "OnePlus/OnePlus3/OnePlus3T:7.1.1/NMF26F/02072026:user/release-keys");
+    property_set("ro.power_profile", "/system/etc/power_profile_3t.xml");
 }
 
 static void import_panel_prop(const std::string& key, const std::string& value, bool for_emulator) {
