@@ -213,6 +213,11 @@ PRODUCT_PACKAGES += \
     libxml2 \
     libprotobuf-cpp-full
 
+# SDCARDFS
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.sys.sdcardfs=true \
+    ro.sdcardfs.enable=true
+
 # Wifi
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/wifi/WCNSS_qcom_cfg.ini:system/etc/wifi/WCNSS_qcom_cfg.ini \
